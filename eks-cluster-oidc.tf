@@ -8,3 +8,6 @@ resource "aws_iam_openid_connect_provider" "empyern-cluster" {
   url = aws_eks_cluster.empyern.identity.0.oidc.0.issuer
 }
 
+output oidc_provider_arn {
+  value=aws_iam_openid_connect_provider.empyern-cluster.arn
+}
